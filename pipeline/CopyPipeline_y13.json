@@ -1,0 +1,158 @@
+{
+	"name": "CopyPipeline_y13",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_y13",
+				"type": "Copy",
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Destination",
+						"value": "[dbo].[STA_Product]"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"oracleReaderQuery": "select * from U_BI_PRODUCT"
+					},
+					"sink": {
+						"type": "SqlSink",
+						"writeBatchSize": "1000"
+					},
+					"enableStaging": false,
+					"enableSkipIncompatibleRow": false,
+					"dataIntegrationUnits": 0,
+					"translator": {
+						"type": "TabularTranslator",
+						"columnMappings": {
+							"ITEMNUMBER": "ITEMNUMBER",
+							"PRODUCTTYPE": "PRODUCTTYPE",
+							"CHAPEAU": "CHAPEAU",
+							"PRODUCTTYPEDESCFR": "PRODUCTTYPEDESCFR",
+							"PRODUCTTYPEDESCNL": "PRODUCTTYPEDESCNL",
+							"MOUNTING": "MOUNTING",
+							"MOUNTINGTIME": "MOUNTINGTIME",
+							"MOUNTINGLOCATION": "MOUNTINGLOCATION",
+							"DESCRIPTIONFR": "DESCRIPTIONFR",
+							"DESCRIPTIONNL": "DESCRIPTIONNL",
+							"LENGTH": "LENGTH",
+							"WIDTH": "WIDTH",
+							"HEIGHT": "HEIGHT",
+							"VOLUME": "VOLUME",
+							"WEIGHT": "WEIGHT",
+							"NETWEIGHT": "NETWEIGHT",
+							"SUPPLIER": "SUPPLIER",
+							"COLLISIMABLE": "COLLISIMABLE",
+							"DELIVERY": "DELIVERY",
+							"DELIVERYDESCFR": "DELIVERYDESCFR",
+							"DELIVERYDESCNL": "DELIVERYDESCNL",
+							"LEVEL1": "LEVEL1",
+							"LEVEL1DESCFR": "LEVEL1DESCFR",
+							"LEVEL1DESCNL": "LEVEL1DESCNL",
+							"LEVEL2": "LEVEL2",
+							"LEVEL2DESCFR": "LEVEL2DESCFR",
+							"LEVEL2DESCNL": "LEVEL2DESCNL",
+							"LEVEL3": "LEVEL3",
+							"LEVEL3DESCFR": "LEVEL3DESCFR",
+							"LEVEL3DESCNL": "LEVEL3DESCNL",
+							"LEVEL4": "LEVEL4",
+							"LEVEL4DESCFR": "LEVEL4DESCFR",
+							"LEVEL4DESCNL": "LEVEL4DESCNL",
+							"LEVEL5": "LEVEL5",
+							"LEVEL5DESCFR": "LEVEL5DESCFR",
+							"LEVEL5DESCNL": "LEVEL5DESCNL",
+							"INSURED": "INSURED",
+							"DANGEROUSGOOD": "DANGEROUSGOOD",
+							"DANGEROUSGOODDESCFR": "DANGEROUSGOODDESCFR",
+							"DANGEROUSGOODDESCNL": "DANGEROUSGOODDESCNL",
+							"HEATRESISTANT": "HEATRESISTANT",
+							"BUYER": "BUYER",
+							"NUMBEROFPARCELS": "NUMBEROFPARCELS",
+							"GIFTTYPE": "GIFTTYPE",
+							"GIFTTYPEDESCFR": "GIFTTYPEDESCFR",
+							"GIFTTYPEDESCNL": "GIFTTYPEDESCNL",
+							"ITEM": "ITEM",
+							"PICKINGMODALITY": "PICKINGMODALITY",
+							"PICKINGMODALITYDESCFR": "PICKINGMODALITYDESCFR",
+							"PICKINGMODALITYDESCNL": "PICKINGMODALITYDESCNL",
+							"STOCKTYPE": "STOCKTYPE",
+							"TREATMENTCODE": "TREATMENTCODE",
+							"ALLOWEDONWEB": "ALLOWEDONWEB",
+							"CIRCUIT": "CIRCUIT",
+							"SUISTOCK": "SUISTOCK",
+							"TYPEDEPART": "TYPEDEPART",
+							"AV": "AV",
+							"LDF": "LDF",
+							"STATUS": "STATUS",
+							"STATUSDESCFR": "STATUSDESCFR",
+							"STATUSDESCNL": "STATUSDESCNL",
+							"EAN": "EAN",
+							"EANLOG": "EANLOG",
+							"BRAND": "BRAND",
+							"BRANDDESCFR": "BRANDDESCFR",
+							"BRANDDESCNL": "BRANDDESCNL",
+							"MODELNUMBER": "MODELNUMBER",
+							"FOSTPLUS": "FOSTPLUS",
+							"VALORLUX": "VALORLUX",
+							"BEBATCODE1": "BEBATCODE1",
+							"BEBATFAMILY1": "BEBATFAMILY1",
+							"BEBATTYPE1": "BEBATTYPE1",
+							"BEBATQUANTITY1": "BEBATQUANTITY1",
+							"BEBATCODE2": "BEBATCODE2",
+							"BEBATFAMILY2": "BEBATFAMILY2",
+							"BEBATTYPE2": "BEBATTYPE2",
+							"BEBATQUANTITY2": "BEBATQUANTITY2",
+							"BEBATCODE3": "BEBATCODE3",
+							"BEBATFAMILY3": "BEBATFAMILY3",
+							"BEBATTYPE3": "BEBATTYPE3",
+							"BEBATQUANTITY3": "BEBATQUANTITY3",
+							"ABCCLASSIFICATION": "ABCCLASSIFICATION",
+							"FOODCONTACT": "FOODCONTACT",
+							"FOODSUPPLEMENT": "FOODSUPPLEMENT",
+							"FOODONLY": "FOODONLY",
+							"COSMETIC": "COSMETIC",
+							"ENERGIESIGN": "ENERGIESIGN",
+							"SARVALUEGSM": "SARVALUEGSM",
+							"MEDICALUSE": "MEDICLAUSE",
+							"NUMBERMONTHSWARUNIGRO": "NUMBERMONTHSWARUNIGRO",
+							"TYPEWARRANTY": "TYPEWARRANTY",
+							"NUMBERMONTHSWARMANU1": "NUMBERMONTHSWARMANU1",
+							"TYPEWARRANTEE1": "TYPEWARRANTEE1",
+							"NUMBERMONTHSWARMANU2": "NUMBERMONTHSWARMANU2",
+							"TYPEWARRANTEE2": "TYPEWARRANTEE2",
+							"NUMBERMONTHSWARMANU3": "NUMBERMONTHSWARMANU3",
+							"TYPEWARRANTEE3": "TYPEWARRANTEE3",
+							"NISCODE": "NISCODE",
+							"APPROVISIONNEUR": "APPROVISIONEUR",
+							"PRODUITCOMPOSE": "PRODUITCOMPOSE",
+							"FORMAT": "FORMAT",
+							"MDL": "MDL",
+							"MODIFICATIONDATE": "MODIFICATIONDATE"
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_y13",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_y13",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

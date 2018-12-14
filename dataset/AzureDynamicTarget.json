@@ -1,0 +1,23 @@
+{
+	"name": "AzureDynamicTarget",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DWH_test",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"DWtablename": {
+				"type": "String",
+				"defaultValue": "dummy"
+			}
+		},
+		"type": "AzureSqlTable",
+		"typeProperties": {
+			"tableName": {
+				"value": "@dataset().DWtablename",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

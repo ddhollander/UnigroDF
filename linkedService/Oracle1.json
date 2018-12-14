@@ -1,0 +1,15 @@
+{
+	"name": "Oracle1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"type": "Oracle",
+		"typeProperties": {
+			"connectionString": "host=10.10.140.10;port=1521;sid=unigprd;user id=soc1",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI1MDkyY2JkZi03MjgzLTRlZDUtODM1Yi1mNjE4ODkwN2I1MmYiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "NeeetLaptopDDH",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

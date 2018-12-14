@@ -1,0 +1,428 @@
+{
+	"name": "DestinationDataset_y13",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DWH_prod",
+			"type": "LinkedServiceReference"
+		},
+		"type": "AzureSqlTable",
+		"structure": [
+			{
+				"name": "ITEMNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "PRODUCTTYPE",
+				"type": "String"
+			},
+			{
+				"name": "CHAPEAU",
+				"type": "String"
+			},
+			{
+				"name": "PRODUCTTYPEDESCFR",
+				"type": "String"
+			},
+			{
+				"name": "PRODUCTTYPEDESCNL",
+				"type": "String"
+			},
+			{
+				"name": "MOUNTING",
+				"type": "String"
+			},
+			{
+				"name": "MOUNTINGTIME",
+				"type": "Decimal"
+			},
+			{
+				"name": "MOUNTINGLOCATION",
+				"type": "String"
+			},
+			{
+				"name": "DESCRIPTIONFR",
+				"type": "String"
+			},
+			{
+				"name": "DESCRIPTIONNL",
+				"type": "String"
+			},
+			{
+				"name": "LENGTH",
+				"type": "Decimal"
+			},
+			{
+				"name": "WIDTH",
+				"type": "Decimal"
+			},
+			{
+				"name": "HEIGHT",
+				"type": "Decimal"
+			},
+			{
+				"name": "VOLUME",
+				"type": "Decimal"
+			},
+			{
+				"name": "WEIGHT",
+				"type": "Decimal"
+			},
+			{
+				"name": "NETWEIGHT",
+				"type": "Decimal"
+			},
+			{
+				"name": "SUPPLIER",
+				"type": "String"
+			},
+			{
+				"name": "COLLISIMABLE",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERY",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYDESCFR",
+				"type": "String"
+			},
+			{
+				"name": "DELIVERYDESCNL",
+				"type": "String"
+			},
+			{
+				"name": "LEVEL1",
+				"type": "String"
+			},
+			{
+				"name": "LEVEL1DESCFR",
+				"type": "String"
+			},
+			{
+				"name": "LEVEL1DESCNL",
+				"type": "String"
+			},
+			{
+				"name": "LEVEL2",
+				"type": "String"
+			},
+			{
+				"name": "LEVEL2DESCFR",
+				"type": "String"
+			},
+			{
+				"name": "LEVEL2DESCNL",
+				"type": "String"
+			},
+			{
+				"name": "LEVEL3",
+				"type": "String"
+			},
+			{
+				"name": "LEVEL3DESCFR",
+				"type": "String"
+			},
+			{
+				"name": "LEVEL3DESCNL",
+				"type": "String"
+			},
+			{
+				"name": "LEVEL4",
+				"type": "String"
+			},
+			{
+				"name": "LEVEL4DESCFR",
+				"type": "String"
+			},
+			{
+				"name": "LEVEL4DESCNL",
+				"type": "String"
+			},
+			{
+				"name": "LEVEL5",
+				"type": "String"
+			},
+			{
+				"name": "LEVEL5DESCFR",
+				"type": "String"
+			},
+			{
+				"name": "LEVEL5DESCNL",
+				"type": "String"
+			},
+			{
+				"name": "INSURED",
+				"type": "String"
+			},
+			{
+				"name": "DANGEROUSGOOD",
+				"type": "String"
+			},
+			{
+				"name": "DANGEROUSGOODDESCFR",
+				"type": "String"
+			},
+			{
+				"name": "DANGEROUSGOODDESCNL",
+				"type": "String"
+			},
+			{
+				"name": "HEATRESISTANT",
+				"type": "String"
+			},
+			{
+				"name": "BUYER",
+				"type": "String"
+			},
+			{
+				"name": "NUMBEROFPARCELS",
+				"type": "String"
+			},
+			{
+				"name": "GIFTTYPE",
+				"type": "String"
+			},
+			{
+				"name": "GIFTTYPEDESCFR",
+				"type": "String"
+			},
+			{
+				"name": "GIFTTYPEDESCNL",
+				"type": "String"
+			},
+			{
+				"name": "ITEM",
+				"type": "String"
+			},
+			{
+				"name": "PICKINGMODALITY",
+				"type": "String"
+			},
+			{
+				"name": "PICKINGMODALITYDESCFR",
+				"type": "String"
+			},
+			{
+				"name": "PICKINGMODALITYDESCNL",
+				"type": "String"
+			},
+			{
+				"name": "STOCKTYPE",
+				"type": "String"
+			},
+			{
+				"name": "TREATMENTCODE",
+				"type": "String"
+			},
+			{
+				"name": "ALLOWEDONWEB",
+				"type": "String"
+			},
+			{
+				"name": "CIRCUIT",
+				"type": "String"
+			},
+			{
+				"name": "SUISTOCK",
+				"type": "String"
+			},
+			{
+				"name": "TYPEDEPART",
+				"type": "String"
+			},
+			{
+				"name": "AV",
+				"type": "String"
+			},
+			{
+				"name": "LDF",
+				"type": "String"
+			},
+			{
+				"name": "STATUS",
+				"type": "String"
+			},
+			{
+				"name": "STATUSDESCFR",
+				"type": "String"
+			},
+			{
+				"name": "STATUSDESCNL",
+				"type": "String"
+			},
+			{
+				"name": "EAN",
+				"type": "String"
+			},
+			{
+				"name": "EANLOG",
+				"type": "String"
+			},
+			{
+				"name": "BRAND",
+				"type": "String"
+			},
+			{
+				"name": "BRANDDESCFR",
+				"type": "String"
+			},
+			{
+				"name": "BRANDDESCNL",
+				"type": "String"
+			},
+			{
+				"name": "MODELNUMBER",
+				"type": "String"
+			},
+			{
+				"name": "FOSTPLUS",
+				"type": "String"
+			},
+			{
+				"name": "VALORLUX",
+				"type": "String"
+			},
+			{
+				"name": "BEBATCODE1",
+				"type": "String"
+			},
+			{
+				"name": "BEBATFAMILY1",
+				"type": "String"
+			},
+			{
+				"name": "BEBATTYPE1",
+				"type": "String"
+			},
+			{
+				"name": "BEBATQUANTITY1",
+				"type": "String"
+			},
+			{
+				"name": "BEBATCODE2",
+				"type": "String"
+			},
+			{
+				"name": "BEBATFAMILY2",
+				"type": "String"
+			},
+			{
+				"name": "BEBATTYPE2",
+				"type": "String"
+			},
+			{
+				"name": "BEBATQUANTITY2",
+				"type": "String"
+			},
+			{
+				"name": "BEBATCODE3",
+				"type": "String"
+			},
+			{
+				"name": "BEBATFAMILY3",
+				"type": "String"
+			},
+			{
+				"name": "BEBATTYPE3",
+				"type": "String"
+			},
+			{
+				"name": "BEBATQUANTITY3",
+				"type": "String"
+			},
+			{
+				"name": "ABCCLASSIFICATION",
+				"type": "String"
+			},
+			{
+				"name": "FOODCONTACT",
+				"type": "String"
+			},
+			{
+				"name": "FOODSUPPLEMENT",
+				"type": "String"
+			},
+			{
+				"name": "FOODONLY",
+				"type": "String"
+			},
+			{
+				"name": "COSMETIC",
+				"type": "String"
+			},
+			{
+				"name": "ENERGIESIGN",
+				"type": "String"
+			},
+			{
+				"name": "SARVALUEGSM",
+				"type": "String"
+			},
+			{
+				"name": "MEDICLAUSE",
+				"type": "String"
+			},
+			{
+				"name": "NUMBERMONTHSWARUNIGRO",
+				"type": "String"
+			},
+			{
+				"name": "TYPEWARRANTY",
+				"type": "String"
+			},
+			{
+				"name": "NUMBERMONTHSWARMANU1",
+				"type": "String"
+			},
+			{
+				"name": "TYPEWARRANTEE1",
+				"type": "String"
+			},
+			{
+				"name": "NUMBERMONTHSWARMANU2",
+				"type": "String"
+			},
+			{
+				"name": "TYPEWARRANTEE2",
+				"type": "String"
+			},
+			{
+				"name": "NUMBERMONTHSWARMANU3",
+				"type": "String"
+			},
+			{
+				"name": "TYPEWARRANTEE3",
+				"type": "String"
+			},
+			{
+				"name": "NISCODE",
+				"type": "String"
+			},
+			{
+				"name": "APPROVISIONEUR",
+				"type": "String"
+			},
+			{
+				"name": "PRODUITCOMPOSE",
+				"type": "String"
+			},
+			{
+				"name": "FORMAT",
+				"type": "String"
+			},
+			{
+				"name": "MDL",
+				"type": "String"
+			},
+			{
+				"name": "MODIFICATIONDATE",
+				"type": "String"
+			}
+		],
+		"typeProperties": {
+			"tableName": "[dbo].[STA_Product]"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,245 @@
+{
+	"name": "Worker",
+	"properties": {
+		"activities": [
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"typeProperties": {
+					"items": {
+						"value": "@pipeline().parameters.Tablelist",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "TranferData",
+							"type": "Copy",
+							"dependsOn": [
+								{
+									"activity": "Stored Procedure1",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"typeProperties": {
+								"source": {
+									"type": "OracleSource",
+									"oracleReaderQuery": {
+										"value": "select * from @{item().sourceschema}.@{item().sourcetable}",
+										"type": "Expression"
+									}
+								},
+								"sink": {
+									"type": "SqlSink",
+									"writeBatchSize": 10000
+								},
+								"enableStaging": false,
+								"dataIntegrationUnits": 0
+							},
+							"inputs": [
+								{
+									"referenceName": "OracleDynamicSource",
+									"type": "DatasetReference"
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "AzureDynamicTarget",
+									"type": "DatasetReference",
+									"parameters": {
+										"DWtablename": {
+											"value": "[@{item().targetschema}].[@{item().targettable}]",
+											"type": "Expression"
+										}
+									}
+								}
+							]
+						},
+						{
+							"name": "Stored Procedure1",
+							"type": "SqlServerStoredProcedure",
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"typeProperties": {
+								"storedProcedureName": "[dbo].[sp_logging]",
+								"storedProcedureParameters": {
+									"parentpipelineID": {
+										"value": {
+											"value": "@pipeline().parameters.ParentPipelineID",
+											"type": "Expression"
+										},
+										"type": "String"
+									},
+									"pipelineID": {
+										"value": {
+											"value": "@pipeline().RunId",
+											"type": "Expression"
+										},
+										"type": "String"
+									},
+									"proceduretype": {
+										"value": "Worker",
+										"type": "String"
+									},
+									"sourceschemaname": {
+										"value": {
+											"value": "@{item().sourceschema}",
+											"type": "Expression"
+										},
+										"type": "String"
+									},
+									"sourceTablename": {
+										"value": {
+											"value": "@{item().sourcetable}",
+											"type": "Expression"
+										},
+										"type": "String"
+									},
+									"status": {
+										"value": "running",
+										"type": "String"
+									},
+									"targetschemaname": {
+										"value": {
+											"value": "@{item().targetschema}",
+											"type": "Expression"
+										},
+										"type": "String"
+									},
+									"targetTablename": {
+										"value": {
+											"value": "@{item().targettable}",
+											"type": "Expression"
+										},
+										"type": "String"
+									},
+									"triggertime": {
+										"value": {
+											"value": "@pipeline().TriggerTime",
+											"type": "Expression"
+										},
+										"type": "DateTime"
+									}
+								}
+							},
+							"linkedServiceName": {
+								"referenceName": "DWH_test",
+								"type": "LinkedServiceReference"
+							}
+						},
+						{
+							"name": "Stored Procedure2",
+							"type": "SqlServerStoredProcedure",
+							"dependsOn": [
+								{
+									"activity": "TranferData",
+									"dependencyConditions": [
+										"Completed"
+									]
+								}
+							],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"typeProperties": {
+								"storedProcedureName": "[dbo].[sp_logging]",
+								"storedProcedureParameters": {
+									"parentpipelineID": {
+										"value": {
+											"value": "@pipeline().parameters.ParentPipelineID",
+											"type": "Expression"
+										},
+										"type": "String"
+									},
+									"pipelineID": {
+										"value": {
+											"value": "@pipeline().RunId",
+											"type": "Expression"
+										},
+										"type": "String"
+									},
+									"proceduretype": {
+										"value": "Worker",
+										"type": "String"
+									},
+									"sourceschemaname": {
+										"value": {
+											"value": "@{item().sourceschema}",
+											"type": "Expression"
+										},
+										"type": "String"
+									},
+									"sourceTablename": {
+										"value": {
+											"value": "@{item().sourcetable}",
+											"type": "Expression"
+										},
+										"type": "String"
+									},
+									"status": {
+										"value": {
+											"value": "@activity('TranferData').status",
+											"type": "Expression"
+										},
+										"type": "String"
+									},
+									"targetschemaname": {
+										"value": {
+											"value": "@{item().targetschema}",
+											"type": "Expression"
+										},
+										"type": "String"
+									},
+									"targetTablename": {
+										"value": {
+											"value": "@{item().targettable}",
+											"type": "Expression"
+										},
+										"type": "String"
+									},
+									"triggertime": {
+										"value": {
+											"value": "@pipeline().TriggerTime",
+											"type": "Expression"
+										},
+										"type": "DateTime"
+									}
+								}
+							},
+							"linkedServiceName": {
+								"referenceName": "DWH_test",
+								"type": "LinkedServiceReference"
+							}
+						}
+					]
+				}
+			}
+		],
+		"parameters": {
+			"Tablelist": {
+				"type": "Array"
+			},
+			"ParentPipelineID": {
+				"type": "String"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
