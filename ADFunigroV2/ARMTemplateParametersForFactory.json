@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ADFunigroV2"
+		},
+		"DWH_prod_connectionString": {
+			"value": ""
+		},
+		"DWH_test_connectionString": {
+			"value": ""
+		},
+		"Oracle1_connectionString": {
+			"value": ""
+		}
+	}
+}
